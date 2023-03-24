@@ -1,0 +1,33 @@
+[
+    {
+        "model": "property.Property",
+        "pk": 1,
+        "fields": {
+            "name": "NameOne",
+		"address": "address1",
+		"rating": 1,
+		"description": "DescriptionOne",
+		"price": 1000,
+		"bedroom": 2,
+		"guest_allowed": 2,
+		"bathroom": 2,
+		"bed": 2
+        }
+    },
+    {
+        "model": "property.Property",
+        "pk": 2,
+        "fields": {
+            "name": "NameTwo",
+		"address": "address2",
+		"rating": 5,
+		"description": "DescriptionTwo",
+		"price": 100,
+		"bedroom": 1,
+		"guest_allowed": 1,
+		"bathroom": 1,
+		"bed": 1
+        }
+    }
+    
+]
