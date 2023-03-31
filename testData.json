@@ -28,6 +28,22 @@
 		"bathroom": 1,
 		"bed": 1
         }
+    },
+	{
+        "model": "notification.Notification",
+        "pk": 1,
+        "fields": {
+			"user": 1,
+			"reservation": 1
+        }
+    },
+	{
+        "model": "notification.Notification",
+        "pk": 1,
+        "fields": {
+			"user": 1,
+			"reservation": 1
+        }
     }
     
 ]

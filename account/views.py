@@ -54,9 +54,10 @@ class LoginView(APIView):
         if account is None:
             raise AuthenticationFailed('Account is not found.')
 
-        if password != account.password.strip():
-            raise AuthenticationFailed('Incorrect password.')
-        else:
+        # if password != account.password.strip():
+        #     raise AuthenticationFailed('Incorrect password.')
+        account = authenticate(email=email, password=password)
+        if account is not None:
             refresh = RefreshToken.for_user(account)
             response_data = {
                 'status': 'success',
@@ -64,10 +65,11 @@ class LoginView(APIView):
                 'data': {
                     'refresh_token': str(refresh),
                     'access_token': str(refresh.access_token),
-                         }
-                             }
-
+                }
+            }
             return Response(response_data, status=status.HTTP_200_OK)
+        else:
+            raise AuthenticationFailed('Incorrect password.')
 
 
 class LogoutView(APIView):
