@@ -56,6 +56,16 @@ def view_property(request, pk):
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+@api_view(['GET'])
+def view_propertyAll(request):
+    # checking for the parameters from the URL
+    property = Property.objects.all()
+    # if there is something in items else raise error
+    if Property:
+        serializer = PropertySerializer(property, many=True)
+        return Response(serializer.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
 
 # Update
